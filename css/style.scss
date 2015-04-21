@@ -4,6 +4,8 @@
 @charset 'utf-8';
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
 
+$background:    #F5F7FA;  // 217, 2, 98
+
 $link:          #478AF5;  // 217, 71, 96
 $link-top:      #5F99F5;  // 217, 61, 96
 $link-bottom:   #2F7BF5;  // 217, 81, 96
@@ -12,24 +14,37 @@ $link-border:   #2A6EDB;  // 217, 81, 86
 $title:         #1F2124;  // 217, 14, 14
 $text:          #40444A;  // 217, 14, 29
 $subtitle:      #747B87;  // 217, 14, 53
-$link-visited:  #9CA5B5;  // 217, 14, 71
+$grey:          #9CA5B5;  // 217, 14, 71
+
+$border:        #D3D6DB;  // 217, 4, 86
+$border-light:  #EBEFF5;  // 217, 4, 96
 
 @mixin hidden-text() { overflow: hidden; text-indent: -290486px;}
 
-html{ font-size: 16px;}
+html{ background: $background; font-size: 16px;}
 body{ color: $text; font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 1rem; -webkit-font-smoothing: antialiased; line-height: 1.5; text-rendering: optimizeLegibility;}
 a{ color: $link;}
-  a:visited{ color: $link-visited;}
+  a:visited{ color: $grey;}
   a:hover{ color: $text;}
 
 .site-header{ background: $link; @include background-image(linear-gradient(to bottom, $link-top, $link-bottom)); box-shadow: 0 2px 0 $link-border, 0 5px 5px rgba(black, 0.2); color: white; height: 50px;}
 .site-header a{ color: white; text-decoration: none;}
-.site-title{ @include hidden-text; float: left;}
+.site-title{ @include hidden-text; float: left; height: 50px; width: 50px;}
 .site-nav{ }
+
+.list{ background: white; border-bottom: 1px solid $border;}
+.list li{ display: inline;}
+.list a{ border-top: 1px solid $border; display: block; padding: 1rem 2rem; text-decoration: none;}
+.list-title{ font-size: 1.4rem; line-height: 1;}
+.list-subtitle{ color: $text; line-height: 1.25; margin-top: 0.25rem;}
+.list a:visited .list-subtitle{ color: $grey;}
 
 .main{ position: relative;}
 .heading{ margin: 3rem 2rem; text-align: center;}
-.title{ color: $title; font-size: 2rem; line-height: 1;}
-.subtitle{ color: $link-visited; font-size: 1.2rem; line-height: 1; margin-top: 1rem;}
-.content{ margin: 3rem 0;}
-.content p{ margin: 1rem;}
+.title{ color: $text; font-size: 2rem; line-height: 1;}
+.subtitle{ color: $grey; font-size: 1.2rem; line-height: 1.25; margin-top: 0.5rem;}
+.content{ background: white; margin: 3rem 0; padding: 2rem;}
+.content p{ margin: 1rem 0;}
+  .content p:first-child{ margin-top: 0;}
+  .content p:last-child{ margin-bottom: 0;}
+.content code{ background: $background; color: $link; font-size: 0.8rem; padding: 2px 4px; vertical-align: text-bottom;}
