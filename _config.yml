@@ -1,0 +1,11 @@
+# Site settings
+title: How CSS Works
+description: A collection of short articles covering specific CSS use cases.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://howcssworks.com" # the base hostname & protocol for your site
+twitter_username: jgthms
+github_username:  jgthms
+permalink: /:title.html
+
+# Build settings
+markdown: kramdown
