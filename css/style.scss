@@ -19,6 +19,12 @@ $grey:          #9CA5B5;  // 217, 14, 71
 $border:        #D3D6DB;  // 217, 4, 86
 $border-light:  #EBEFF5;  // 217, 4, 96
 
+$alpha:         #FFCFB5; // 21, 29, 100
+$beta:          #F5EDAE; // 53, 29, 96
+$gamma:         #CAF5AE; // 96, 29, 96
+$delta:         #AECDF5; // 214, 29, 96
+$epsilon:       #FFB5D6; // 333, 29, 100
+
 @mixin hidden-text() { overflow: hidden; text-indent: -290486px;}
 
 html{ background: $background; font-size: 16px;}
@@ -29,7 +35,7 @@ a{ color: $link;}
 
 .site-header{ background: $link; @include background-image(linear-gradient(to bottom, $link-top, $link-bottom)); box-shadow: 0 2px 0 $link-border, 0 5px 5px rgba(black, 0.2); color: white; height: 50px;}
 .site-header a{ color: white; text-decoration: none;}
-.site-title{ @include hidden-text; float: left; height: 50px; width: 50px;}
+.site-title{ content: ''; display: block; @include hidden-text; float: left; height: 50px; width: 50px;}
 .site-nav{ }
 
 .list{ background: white; border-bottom: 1px solid $border;}
@@ -44,7 +50,28 @@ a{ color: $link;}
 .title{ color: $text; font-size: 2rem; line-height: 1;}
 .subtitle{ color: $grey; font-size: 1.2rem; line-height: 1.25; margin-top: 0.5rem;}
 .content{ background: white; margin: 3rem 0; padding: 2rem;}
+.content code{ background: $background; color: $link; font-size: 0.8rem; padding: 2px 4px; vertical-align: text-bottom;}
+.content h3{ font-size: 1.2rem; margin: 0 -1rem;}
 .content p{ margin: 1rem 0;}
   .content p:first-child{ margin-top: 0;}
   .content p:last-child{ margin-bottom: 0;}
-.content code{ background: $background; color: $link; font-size: 0.8rem; padding: 2px 4px; vertical-align: text-bottom;}
+
+.browser{ background: white; border: 1px solid $border; border-radius: 5px; box-shadow: 0 2px 4px rgba(black, 0.1); margin: 1rem -1rem; min-height: 240px; overflow: hidden;}
+.browser-bar{ background: $background; height: 30px; padding: 10px; padding-left: 46px; position: relative;}
+.browser-bar div:first-child,
+.browser-bar div:first-child:before,
+.browser-bar div:first-child:after{ background: $border; border-radius: 50%; height: 6px; left: 10px; position: absolute; top: 12px; width: 6px;}
+.browser-bar div:first-child:before{ content: ''; display: block; left: 10px; top: 0;}
+.browser-bar div:first-child:after{ content: ''; display: block; left: 20px; top: 0;}
+.browser-bar div:last-child{ background: white; height: 10px;}
+.browser-body{ padding: 10px; position: relative;}
+// font-family: 'BLOKK Neue'; font-size: 10px; line-height: 1;
+.box{ background: $alpha; color: darken($alpha, 20%); margin-top: 10px; padding: 4px 5px 6px;}
+.box-beta{ background: $beta; color: darken($beta, 20%);}
+.box-gamma{ background: $gamma; color: darken($gamma, 20%);}
+.box-delta{ background: $delta; color: darken($delta, 20%);}
+.box-epsilon{ background: $epsilon; color: darken($epsilon, 20%);}
+
+.box .box{ margin: 6px 5px 4px;}
+
+// .box{ float: left; margin: 0;}
