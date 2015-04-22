@@ -4,33 +4,58 @@
 @charset 'utf-8';
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
 
+$text-darker:   #1F2124;  // 217, 14, 14
+$text-dark:     #40444A;  // 217, 14, 29
+$text-medium:   #747B87;  // 217, 14, 53
+$text-light:    #9CA5B5;  // 217, 14, 71
+
 $background:    #F5F7FA;  // 217, 2, 98
-
-$link:          #478AF5;  // 217, 71, 96
-$link-top:      #5F99F5;  // 217, 61, 96
-$link-bottom:   #2F7BF5;  // 217, 81, 96
-$link-border:   #2A6EDB;  // 217, 81, 86
-
-$title:         #1F2124;  // 217, 14, 14
-$text:          #40444A;  // 217, 14, 29
-$subtitle:      #747B87;  // 217, 14, 53
-$grey:          #9CA5B5;  // 217, 14, 71
-
 $border:        #D3D6DB;  // 217, 4, 86
 $border-light:  #EBEFF5;  // 217, 4, 96
 
-$alpha:         #FFCFB5; // 21, 29, 100
-$beta:          #F5EDAE; // 53, 29, 96
-$gamma:         #CAF5AE; // 96, 29, 96
-$delta:         #AECDF5; // 214, 29, 96
-$epsilon:       #FFB5D6; // 333, 29, 100
+$blue:          #478AF5;  // 217, 71, 96
+$blue-light:    #5F99F5;  // 217, 61, 96
+$blue-dark:     #2F7BF5;  // 217, 81, 96
+$blue-darker:   #2A6EDB;  // 217, 81, 86
+
+$red:           #FFC6B5; // 14, 29, 100
+$red-text:      darken($red, 30%);
+$yellow:        #F5EDAE; // 53, 29, 96
+$yellow-text:   darken($yellow, 50%);
+$green:         #CAF5AE; // 96, 29, 96
+$green-text:    darken($green, 50%);
+$azur:          #B5D1FF; // 217, 29, 100
+$azur-text:     darken($azur, 30%);
+$pink:          #F8B5FF; // 294, 29, 100
+$pink-text:     darken($pink, 30%);
+
+$alpha: $red;
+$alpha-text: $red-text;
+$beta: $yellow;
+$beta-text: $yellow-text;
+$gamma: $green;
+$gamma-text: $green-text;
+$delta: $azur;
+$delta-text: $azur-text;
+$epsilon: $pink;
+$epsilon-text: $pink-text;
+
+$link: $blue;
+$link-top: $blue-light;
+$link-bottom: $blue-dark;
+$link-border: $blue-darker;
+$link-visited: $text-light;
+
+$title: $text-darker;
+$text: $text-dark;
+$subtitle: $text-light;
 
 @mixin hidden-text() { overflow: hidden; text-indent: -290486px;}
 
 html{ background: $background; font-size: 16px;}
-body{ color: $text; font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 1rem; -webkit-font-smoothing: antialiased; line-height: 1.5; text-rendering: optimizeLegibility;}
+body{ color: $text; font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 1rem; -webkit-font-smoothing: antialiased; line-height: 1.5; margin: 0 auto; max-width: 960px; text-rendering: optimizeLegibility;}
 a{ color: $link;}
-  a:visited{ color: $grey;}
+  a:visited{ color: $link-visited;}
   a:hover{ color: $text;}
 
 .site-header{ background: $link; @include background-image(linear-gradient(to bottom, $link-top, $link-bottom)); box-shadow: 0 2px 0 $link-border, 0 5px 5px rgba(black, 0.2); color: white; height: 50px;}
@@ -43,34 +68,37 @@ a{ color: $link;}
 .list a{ border-top: 1px solid $border; display: block; padding: 1rem 2rem; text-decoration: none;}
 .list-title{ font-size: 1.4rem; line-height: 1;}
 .list-subtitle{ color: $text; line-height: 1.25; margin-top: 0.25rem;}
-.list a:visited .list-subtitle{ color: $grey;}
+.list a:visited .list-subtitle{ color: $link-visited;}
 
 .main{ position: relative;}
 .heading{ margin: 3rem 2rem; text-align: center;}
 .title{ color: $text; font-size: 2rem; line-height: 1;}
-.subtitle{ color: $grey; font-size: 1.2rem; line-height: 1.25; margin-top: 0.5rem;}
+.subtitle{ color: $subtitle; font-size: 1.2rem; line-height: 1.25; margin-top: 0.5rem;}
 .content{ background: white; margin: 3rem 0; padding: 2rem;}
-.content code{ background: $background; color: $link; font-size: 0.8rem; padding: 2px 4px; vertical-align: text-bottom;}
-.content h3{ font-size: 1.2rem; margin: 0 -1rem;}
+.content code{ background: $background; color: $link; font-size: 0.8em; padding: 2px 4px; vertical-align: text-bottom;}
+.content aside{ color: $text-light; font-size: 0.8rem;}
+.content blockquote{ background: $background; border-left: 0.25rem solid $link; color: $text-medium; font-size: 1.2rem; padding: 1.5rem;}
+.content h3{ color: $text-darker; font-size: 1.4rem; font-weight: bold; margin: 2rem 0 1rem;}
 .content p{ margin: 1rem 0;}
   .content p:first-child{ margin-top: 0;}
   .content p:last-child{ margin-bottom: 0;}
+.content ul{ list-style: disc outside; margin: 1rem 2rem;}
+.content li{ margin: 1rem 0;}
 
-.browser{ background: white; border: 1px solid $border; border-radius: 5px; box-shadow: 0 2px 4px rgba(black, 0.1); margin: 1rem -1rem; min-height: 240px; overflow: hidden;}
-.browser-bar{ background: $background; height: 30px; padding: 10px; padding-left: 46px; position: relative;}
-.browser-bar div:first-child,
-.browser-bar div:first-child:before,
-.browser-bar div:first-child:after{ background: $border; border-radius: 50%; height: 6px; left: 10px; position: absolute; top: 12px; width: 6px;}
-.browser-bar div:first-child:before{ content: ''; display: block; left: 10px; top: 0;}
-.browser-bar div:first-child:after{ content: ''; display: block; left: 20px; top: 0;}
-.browser-bar div:last-child{ background: white; height: 10px;}
-.browser-body{ padding: 10px; position: relative;}
+.browser{ background: white; border: 1px solid $border; border-radius: 5px; box-shadow: 0 0.5rem 1rem rgba(black, 0.1); font-size: 12px; margin: 1rem 0; min-height: 240px; overflow: hidden;}
+.browser-bar{ background: $background; height: 2.5em; padding: 0.5em 1em 0.5em 4em; position: relative;}
+.browser-bar div,
+.browser-bar div:before,
+.browser-bar div:after{ background: $border; border-radius: 50%; height: 0.5em; left: 1em; position: absolute; top: 1em; width: 0.5em;}
+.browser-bar div:before{ content: ''; display: block; left: 10px; top: 0;}
+.browser-bar div:after{ content: ''; display: block; left: 20px; top: 0;}
+.browser-body{ border-top: 1px solid $border; position: relative;}
 // font-family: 'BLOKK Neue'; font-size: 10px; line-height: 1;
-.box{ background: $alpha; color: darken($alpha, 20%); margin-top: 10px; padding: 4px 5px 6px;}
-.box-beta{ background: $beta; color: darken($beta, 20%);}
-.box-gamma{ background: $gamma; color: darken($gamma, 20%);}
-.box-delta{ background: $delta; color: darken($delta, 20%);}
-.box-epsilon{ background: $epsilon; color: darken($epsilon, 20%);}
+.box{ background: $alpha; color: $alpha-text; padding: 0.5em;}
+.box-beta{ background: $beta; color: $beta-text;}
+.box-gamma{ background: $gamma; color: $gamma-text;}
+.box-delta{ background: $delta; color: $delta-text;}
+.box-epsilon{ background: $epsilon; color: $epsilon-text;}
 
 .box .box{ margin: 6px 5px 4px;}
 
