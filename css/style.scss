@@ -1,6 +1,7 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
+
 @charset 'utf-8';
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
 
@@ -53,12 +54,12 @@ $subtitle: $text-light;
 @mixin hidden-text() { overflow: hidden; text-indent: -290486px;}
 
 html{ background: $background; font-size: 16px;}
-body{ color: $text; font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 1rem; -webkit-font-smoothing: antialiased; line-height: 1.5; margin: 0 auto; max-width: 960px; text-rendering: optimizeLegibility;}
+body{ color: $text; font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 1rem; -webkit-font-smoothing: antialiased; line-height: 1.5; margin: 0 auto; text-rendering: optimizeLegibility;}
 a{ color: $link;}
   a:visited{ color: $link-visited;}
   a:hover{ color: $text;}
 
-.site-header{ background: $link; @include background-image(linear-gradient(to bottom, $link-top, $link-bottom)); box-shadow: 0 2px 0 $link-border, 0 5px 5px rgba(black, 0.2); color: white; height: 50px;}
+.site-header{ background: $link; @include background-image(linear-gradient(to bottom, $link-top, $link-bottom)); box-shadow: 0 2px 0 $link-border, 0 5px 5px rgba(black, 0.2); color: white; height: 50px; position: relative; z-index: 1;}
 .site-header a{ color: white; text-decoration: none;}
 .site-title{ content: ''; display: block; @include hidden-text; float: left; height: 50px; width: 50px;}
 .site-nav{ }
@@ -70,11 +71,11 @@ a{ color: $link;}
 .list-subtitle{ color: $text; line-height: 1.25; margin-top: 0.25rem;}
 .list a:visited .list-subtitle{ color: $link-visited;}
 
-.main{ position: relative;}
-.heading{ margin: 3rem 2rem; text-align: center;}
-.title{ color: $text; font-size: 2rem; line-height: 1;}
+.main{ background: white; padding: 1rem; position: relative;}
+.heading{ margin-bottom: 2rem; padding: 2rem 1rem; text-align: center;}
+.title{ color: $title; font-size: 2.4rem; line-height: 1;}
+.title strong{ color: $link;}
 .subtitle{ color: $subtitle; font-size: 1.2rem; line-height: 1.25; margin-top: 0.5rem;}
-.content{ background: white; margin: 3rem 0; padding: 2rem;}
 .content code{ background: $background; color: $link; font-size: 0.8em; padding: 2px 4px; vertical-align: text-bottom;}
 .content aside{ color: $text-light; font-size: 0.8rem;}
 .content blockquote{ background: $background; border-left: 0.25rem solid $link; color: $text-medium; font-size: 1.2rem; padding: 1.5rem;}
@@ -85,16 +86,15 @@ a{ color: $link;}
 .content ul{ list-style: disc outside; margin: 1rem 2rem;}
 .content li{ margin: 1rem 0;}
 
-.browser{ background: white; border: 1px solid $border; border-radius: 5px; box-shadow: 0 0.5rem 1rem rgba(black, 0.1); font-size: 12px; margin: 1rem 0; min-height: 240px; overflow: hidden;}
-.browser-bar{ background: $background; height: 2.5em; padding: 0.5em 1em 0.5em 4em; position: relative;}
+.browser{ background: white; border: 1px solid $border; border-radius: 5px; box-shadow: 0 0.5rem 1rem rgba(black, 0.1); margin: 1rem 0; min-height: 240px; overflow: hidden;}
+.browser-bar{ background: $background; height: 1.5rem; padding: 0.5rem 1rem 0.5rem 4rem; position: relative;}
 .browser-bar div,
 .browser-bar div:before,
-.browser-bar div:after{ background: $border; border-radius: 50%; height: 0.5em; left: 1em; position: absolute; top: 1em; width: 0.5em;}
-.browser-bar div:before{ content: ''; display: block; left: 10px; top: 0;}
-.browser-bar div:after{ content: ''; display: block; left: 20px; top: 0;}
+.browser-bar div:after{ background: $border; border-radius: 50%; height: 0.5rem; left: 0.5rem; position: absolute; top: 0.5rem; width: 0.5rem;}
+.browser-bar div:before{ content: ''; display: block; left: 0.75rem; top: 0;}
+.browser-bar div:after{ content: ''; display: block; left: 1.5rem; top: 0;}
 .browser-body{ border-top: 1px solid $border; position: relative;}
-// font-family: 'BLOKK Neue'; font-size: 10px; line-height: 1;
-.box{ background: $alpha; color: $alpha-text; padding: 0.5em;}
+.box{ background: $alpha; color: $alpha-text; font-size: 14px; line-height: 1.25; padding: 0.5em;}
 .box-beta{ background: $beta; color: $beta-text;}
 .box-gamma{ background: $gamma; color: $gamma-text;}
 .box-delta{ background: $delta; color: $delta-text;}
@@ -102,4 +102,21 @@ a{ color: $link;}
 
 .box .box{ margin: 6px 5px 4px;}
 
-// .box{ float: left; margin: 0;}
+@media screen and (min-width: 768px) {
+
+  html{ font-size: 20px;}
+  body{ font-size: 20px; max-width: 50rem;}
+
+  .site-header{ background: none; box-shadow: none;}
+  .site-title{ background: $link;}
+
+  .main{ padding: 5rem;}
+  .heading{ margin-bottom: 5rem;}
+  .content aside{ float: right; margin-top: -240px; padding-left: 1rem; width: 50%;}
+  .browser{ width: 50%;}
+
+}
+
+@media screen and (min-width: 992px) {
+
+}

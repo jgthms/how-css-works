@@ -1,22 +1,22 @@
 ---
 layout: post
-title: "Float"
+title: "How <strong>CSS float</strong> works"
 subtitle: "The most <strong>unpredictable</strong> property"
 ---
 
-> There is not such thing as an **unstyled** HTML document. Each browser comes with a default CSS: the **user agent stylesheet**.
+<!-- > There is not such thing as an **unstyled** HTML document. Each browser comes with a default CSS: the **user agent stylesheet**. -->
 
 The default styling relies upon the HTML **structure**: how elements are nested, whether they are `block` or `inline`, in which order they appear in the code...
 
-### Fluid
+### Fluidity
 
 A `block` element is **fluid**:
 
-* **width**  
+* **width: 100%**  
 a block will take up the whole width available
-* **wrapping**  
-if a block's inline content doesn't fit on a single line, it will wrap itself
-* **height**  
+* **word wrap**  
+if a block's inline content doesn't fit on a single line, it will continue on a new line
+* **height: auto**  
 a block's height varies automatically to accomodate for its content
 
 <div class="browser">
@@ -25,12 +25,14 @@ a block's height varies automatically to accomodate for its content
   </div>
   <div class="browser-body">
     <div class="box box-alpha">
-      A block element will fill up the whole <strong>width</strong>, while its <strong>height</strong> will vary automatically to accomodate for its content.
+      A block element will fill up the whole <strong>width</strong> available, while its <strong>height</strong> will vary automatically to accomodate for its content.
+      <br>
+      <span data-typer-targets="You can add even more text,This block will continue expanding,This line is most probably long enough to trigger a new one by wrapping the text"></span>
     </div>
   </div>
 </div>
 
-### Order
+### Ordering
 
 <div class="browser">
   <div class="browser-bar">
@@ -59,7 +61,7 @@ a block's height varies automatically to accomodate for its content
   Each <code>block</code> appears from <strong>top</strong> to <strong>bottom</strong>, in the order in which they appear in the HTML code.
 </aside>
 
-### Stack
+### Stacking
 
 <div class="browser">
   <div class="browser-bar">
@@ -74,3 +76,7 @@ a block's height varies automatically to accomodate for its content
     </div>
   </div>
 </div>
+
+<aside>
+  Each <strong>nested</strong> element appears <strong>on top</strong> of its parent.
+</aside>
