@@ -53,17 +53,23 @@ $subtitle: $text-light;
 
 @mixin hidden-text() { overflow: hidden; text-indent: -290486px;}
 
-html{ background: $background; font-size: 16px;}
+html{ background: $background; font-size: 20px;}
 body{ color: $text; font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 1rem; -webkit-font-smoothing: antialiased; line-height: 1.5; margin: 0 auto; text-rendering: optimizeLegibility;}
 a{ color: $link;}
-  a:visited{ color: $link-visited;}
+  /*a:visited{ color: $link-visited;}*/
   a:hover{ color: $text;}
 
 .site-header{ background: $link; @include background-image(linear-gradient(to bottom, $link-top, $link-bottom)); box-shadow: 0 2px 0 $link-border, 0 5px 5px rgba(black, 0.2); color: white; height: 50px; position: relative; z-index: 1;}
 .site-header a{ color: white; text-decoration: none;}
-.site-title{ content: ''; display: block; @include hidden-text; float: left; height: 50px; width: 50px;}
+.site-title{ background: url(/img/how-css-works-icon@2x.png) no-repeat center center; background-size: 50px 50px; content: ''; display: block; @include hidden-text; float: left; height: 50px; width: 50px;}
 .site-nav{ }
 
+.main{ background: white; padding: 1rem; position: relative;}
+.heading{ margin-bottom: 1rem; padding: 2rem 1rem; text-align: center;}
+.logo{ height: 162px; width: 152px;}
+.title{ color: $title; font-size: 2.4rem; line-height: 1;}
+.title strong{ color: $link;}
+.subtitle{ color: $subtitle; font-size: 1.2rem; line-height: 1.25; margin-top: 0.5rem;}
 .list{ background: white; border-bottom: 1px solid $border;}
 .list li{ display: inline;}
 .list a{ border-top: 1px solid $border; display: block; padding: 1rem 2rem; text-decoration: none;}
@@ -71,20 +77,16 @@ a{ color: $link;}
 .list-subtitle{ color: $text; line-height: 1.25; margin-top: 0.25rem;}
 .list a:visited .list-subtitle{ color: $link-visited;}
 
-.main{ background: white; padding: 1rem; position: relative;}
-.heading{ margin-bottom: 2rem; padding: 2rem 1rem; text-align: center;}
-.title{ color: $title; font-size: 2.4rem; line-height: 1;}
-.title strong{ color: $link;}
-.subtitle{ color: $subtitle; font-size: 1.2rem; line-height: 1.25; margin-top: 0.5rem;}
-.content code{ background: $background; color: $link; font-size: 0.8em; padding: 2px 4px; vertical-align: text-bottom;}
+.content code{ background: $background; border: 1px solid $border; border-radius: 2px; color: $link; font-size: 0.8em; padding: 2px 4px; vertical-align: baseline;}
 .content aside{ color: $text-light; font-size: 0.8rem;}
 .content blockquote{ background: $background; border-left: 0.25rem solid $link; color: $text-medium; font-size: 1.2rem; padding: 1.5rem;}
-.content h3{ color: $text-darker; font-size: 1.4rem; font-weight: bold; margin: 2rem 0 1rem;}
+.content h3{ color: $text-darker; font-size: 1.4rem; font-weight: bold; margin: 2rem 0 1rem; padding-left: 0.75em; position: relative;}
+.content h3 a{ left: 0; position: absolute; text-decoration: none;}
 .content p{ margin: 1rem 0;}
   .content p:first-child{ margin-top: 0;}
   .content p:last-child{ margin-bottom: 0;}
-.content ul{ list-style: disc outside; margin: 1rem 2rem;}
-.content li{ margin: 1rem 0;}
+.content ul{ list-style: disc outside; margin: 1rem;}
+.content ul ul{ list-style-type: circle; margin: 0 2rem;}
 
 .browser{ background: white; border: 1px solid $border; border-radius: 5px; box-shadow: 0 0.5rem 1rem rgba(black, 0.1); margin: 1rem 0; min-height: 240px; overflow: hidden;}
 .browser-bar{ background: $background; height: 1.5rem; padding: 0.5rem 1rem 0.5rem 4rem; position: relative;}
@@ -94,13 +96,14 @@ a{ color: $link;}
 .browser-bar div:before{ content: ''; display: block; left: 0.75rem; top: 0;}
 .browser-bar div:after{ content: ''; display: block; left: 1.5rem; top: 0;}
 .browser-body{ border-top: 1px solid $border; position: relative;}
-.box{ background: $alpha; color: $alpha-text; font-size: 14px; line-height: 1.25; padding: 0.5em;}
-.box-beta{ background: $beta; color: $beta-text;}
-.box-gamma{ background: $gamma; color: $gamma-text;}
-.box-delta{ background: $delta; color: $delta-text;}
-.box-epsilon{ background: $epsilon; color: $epsilon-text;}
 
-.box .box{ margin: 6px 5px 4px;}
+.block{ background: $alpha; color: $alpha-text; font-size: 14px; line-height: 1.25; padding: 0.5em; @include transition(all 250ms);}
+.block-beta{ background: $beta; color: $beta-text;}
+.block-gamma{ background: $gamma; color: $gamma-text;}
+.block-delta{ background: $delta; color: $delta-text;}
+.block-epsilon{ background: $epsilon; color: $epsilon-text;}
+
+.block .block{ margin: 6px 5px 4px;}
 
 @media screen and (min-width: 768px) {
 
@@ -108,15 +111,15 @@ a{ color: $link;}
   body{ font-size: 20px; max-width: 50rem;}
 
   .site-header{ background: none; box-shadow: none;}
-  .site-title{ background: $link;}
+  .site-title{ background-color: $link;}
 
-  .main{ padding: 5rem;}
-  .heading{ margin-bottom: 5rem;}
+  .main{ padding: 2rem 5rem;}
+  .heading{ margin-bottom: 2rem;}
+  .list a{ padding: 1rem;}
+
+  .content h3{ padding-left: 0;}
+  .content h3 a{ left: auto; margin-right: 0.25em; right: 100%;}
   .content aside{ float: right; margin-top: -240px; padding-left: 1rem; width: 50%;}
   .browser{ width: 50%;}
-
-}
-
-@media screen and (min-width: 992px) {
 
 }
