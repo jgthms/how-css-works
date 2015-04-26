@@ -1,0 +1,81 @@
+@function hsb($h-hsb, $s-hsb, $b-hsb, $a: 1) {
+  @if $b-hsb == 0 {
+    @return hsla(0, 0, 0, $a);
+  } @else {
+    $l-hsl: ($b-hsb/2) * (2 - ($s-hsb/100));
+    $s-hsl: ($b-hsb * $s-hsb) / if($l-hsl < 50, $l-hsl * 2, 200 - $l-hsl * 2);
+    @return hsla($h-hsb, min(100, $s-hsl), min(100, $l-hsl), $a);
+  }
+}
+
+@function hsb-saturate($s, $a) {
+  @if $s == 0 {
+    @return 0;
+  } @else {
+    @return $s + $a;
+  }
+}
+
+@function max($v1, $v2) {
+  @return if($v1 > $v2, $v1, $v2);
+}
+
+@function min($v1, $v2) {
+  @return if($v1 < $v2, $v1, $v2);
+}
+
+@mixin buttonize($h, $s, $b, $light: 0) {
+
+  $color: hsb($h, $s, $b);
+  $color-dark: hsb($h, hsb-saturate($s, 10), $b);
+  $inset-top: inset 0 1px 0 hsb($h, $s - 20, $b + 10);
+  $inset-bottom: inset 0 -1px 0 hsb($h, hsb-saturate($s, 10), $b - 10);
+  $inset: inset 0 0 0 1px hsb($h, hsb-saturate($s, - 10), $b);
+
+  background-color: $color;
+  background-image: linear-gradient(to bottom, $color, $color-dark);
+  border: 1px solid hsb($h, hsb-saturate($s, 20), $b - 20);
+  box-shadow: $inset-top,
+              $inset-bottom,
+              $inset,
+              0 2px 4px rgba(black, 0.2);
+
+  @if $light == 1 {
+    color: hsb($h, hsb-saturate($s, 40), $b - 40);
+    text-shadow: 0 1px 0 rgba(white, 0.5);
+  } @else {
+    color: white;
+    text-shadow: 0 1px 2px rgba(black, 0.3);
+  }
+
+  &:hover,
+  &:focus {
+    background: $color-dark;
+    border-color: hsb($h, hsb-saturate($s, 40), $b - 40);
+    box-shadow: $inset-top,
+                $inset-bottom,
+                $inset;
+  }
+
+  &:active {
+    background: $color-dark;
+    box-shadow: inset 0 2px 3px rgba(black, 0.2);
+  }
+
+  .fa {
+    color: hsb($h, hsb-saturate($s, 20), $b - 20);
+    text-shadow: 0 1px 0 rgba(white, 0.3);
+  }
+
+}
+
+@mixin hidden-text() {
+  overflow: hidden;
+  text-indent: -290486px;
+}
+
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+      @content;
+  }
+}

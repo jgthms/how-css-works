@@ -1,4 +1,35 @@
 <footer class="site-footer">
+  <section>
+    <h4>Upcoming</h4>
+    <ul>
+      <li>Relative positioning</li>
+      <li>Absolute positioning</li>
+      <li>Fixed positioning</li>
+    </ul>
+  </section>
+  <section>
+    <h4>Subscribe</h4>
+    <p>
+      I will try to write a few more of these articles in the future.
+      <br>
+      If you want to get notified when I do, enter your email. No spam of course.
+    </p>
+    <form>
+      <input type="text" placeholder="hello@example.com">
+      <button>Subscribe</button>
+    </form>
+    <p>
+      Or subscribe to the
+      <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS feed</a>
+      .
+    </p>
+  </section>
+  <section>
+    <h4>Request</h4>
+    <p>
+      If there is a particular CSS feature you would like to see covered here, <a id="c">let me know</a>.
+    </p>
+  </section>
 </footer>
 <script type="text/javascript" src="{{ "/bower_components/jquery/dist/jquery.min.js" | prepend: site.baseurl }}"></script>
 <script type="text/javascript" src="{{ "/bower_components/jquery.typer/src/jquery.typer.js" | prepend: site.baseurl }}"></script>

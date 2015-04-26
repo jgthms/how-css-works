@@ -14,11 +14,10 @@ layout: default
 <ul class="list">
   {% for post in site.posts %}
     <li>
-      <a href="{{ post.url | prepend: site.baseurl }}">
-        <h3 class="list-title">{{ post.title }}</h3>
-        <p class="list-subtitle">{{ post.subtitle }}</p>
-      </a>
+      <h3 class="list-title">
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h3>
+      <p class="list-subtitle">{{ post.subtitle }}</p>
     </li>
   {% endfor %}
 </ul>
-<!-- <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->

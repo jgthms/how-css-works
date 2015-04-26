@@ -1,0 +1,62 @@
+// Definition
+
+$hue: 217;
+
+$text-darker:     hsb($hue, 14, 14);
+$text-dark:       hsb($hue, 14, 29);
+$text-medium:     hsb($hue, 14, 53);
+$text-light:      hsb($hue, 14, 71);
+
+$background:      hsb($hue, 2, 98);
+$border:          hsb($hue, 4, 86);
+$border-light:    hsb($hue, 4, 96);
+
+$blue:            hsb($hue, 71, 96);
+$blue-light:      hsb($hue, 61, 96);
+$blue-dark:       hsb($hue, 81, 96);
+$blue-darker:     hsb($hue, 81, 86);
+
+$red:             hsb(14, 29, 100);
+$red-text:        darken($red, 30%);
+$yellow:          hsb(53, 29, 96);
+$yellow-text:     darken($yellow, 50%);
+$green:           hsb(96, 29, 96);
+$green-text:      darken($green, 50%);
+$azur:            hsb(217, 29, 100);
+$azur-text:       darken($azur, 30%);
+$pink:            hsb(294, 29, 100);
+$pink-text:       darken($pink, 30%);
+
+$ecru-white: #f6f9f1;
+$satin-linen: #e4e2ce;
+$putty: #e6db91;
+$dawn: #a8a198;
+$whiskey: #ce9466;
+$cannon-pink: #9c5073;
+$eggplant: #674164;
+
+// Application
+
+$html-from:     $text-darker;
+$html-to:       $text-medium;
+
+$link:          $blue;
+$link-visited:  $text-light;
+
+$title:         $text-dark;
+$text:          $text-dark;
+$subtitle:      $text-light;
+
+$background-body: $background;
+$background-main: white;
+
+$alpha: $red;
+$alpha-text: $red-text;
+$beta: $yellow;
+$beta-text: $yellow-text;
+$gamma: $green;
+$gamma-text: $green-text;
+$delta: $azur;
+$delta-text: $azur-text;
+$epsilon: $pink;
+$epsilon-text: $pink-text;

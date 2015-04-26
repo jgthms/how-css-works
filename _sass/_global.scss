@@ -1,0 +1,35 @@
+body,button,input,textarea{ font-family: 'Source Sans Pro', Arial, sans-serif;}
+
+html{
+  // background-attachment: fixed;
+  // background-color: $html;
+  // background-image:
+  //   url(/img/noise.png),
+  //   radial-gradient(ellipse farthest-side at 25% 100%, darken($html, 20%), rgba($html, 0)),
+  //   radial-gradient(ellipse farthest-side at 100% 75%, darken($html, 10%), rgba($html, 0)),
+  //   radial-gradient(circle closest-corner at 50% 0%, lighten($html, 10%), $html);
+  // background: hsb($hue, $saturation, 98);
+  // background-image:
+  //   url(/img/noise.png),
+  //   radial-gradient(ellipse farthest-side at 25% 100%, hsb($hue, $saturation, 71), hsb($hue, $saturation, 71, 0)),
+  //   radial-gradient(ellipse farthest-side at 75% 100%, hsb($hue, $saturation, 71), hsb($hue, $saturation, 71, 0)),
+  //   radial-gradient(circle closest-corner at 50% 0%, hsb($hue, $saturation, 96), hsb($hue, $saturation, 86))
+  // ;
+  background: white;
+  font-size: 16px;
+}
+body{ color: $text; font-size: 1rem; -webkit-font-smoothing: antialiased; line-height: 1.5; margin: 0 auto; text-rendering: optimizeLegibility;}
+a{ color: $link;}
+  // a:visited{ color: $link-visited;}
+  a:hover{ color: $text;}
+input[type="text"]{ border: 1px solid $border; border-radius: 3px; font-size: 0.8rem; height: 2rem; padding: 0.5em 0.75em;}
+button{ @include buttonize($hue, 71, 96); border-radius: 3px; display: inline-block; font-size: 0.8rem; height: 2rem; line-height: 1; padding: 0 0.75em; vertical-align: top;}
+
+.site-header{ background: $link; color: white; height: 50px; position: relative; z-index: 1;}
+.site-header a{ text-decoration: none;}
+.site-title{ @include hidden-text; background: $link url(/img/how-css-works-icon@2x.png) no-repeat center center; background-size: 50px 50px; content: ''; display: block; float: left; height: 50px; width: 50px;}
+.site-footer{ background: $background; color: $text-medium; font-size: 0.8rem; padding: 4rem 0;}
+.site-footer section{ margin: 0 2rem 2rem;}
+  .site-footer section:last-child{ margin-bottom: 0;}
+.site-footer h4{ color: $text-light; font-size: 0.8em; letter-spacing: 0.1em; text-transform: uppercase;}
+.site-footer form{ margin: 0.5rem 0;}

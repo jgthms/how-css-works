@@ -1,0 +1,42 @@
+.main{ background: white; padding: 4rem 2rem; position: relative;}
+.heading{ margin-bottom: 4rem; position: relative; text-align: center;}
+.logo{ height: 162px; width: 152px;}
+.title{ color: $title; font-size: 2.2rem; line-height: 1;}
+.subtitle{ color: $subtitle; font-size: 1.2rem; line-height: 1.25; margin-top: 0.5rem;}
+.list li{ display: block; margin-top: 2rem;}
+  .list li:first-child{ margin-top: 0;}
+.list a{ text-decoration: none;}
+  .list a:hover{ text-decoration: underline;}
+.list-title{ font-size: 1.4rem; line-height: 1;}
+.list-subtitle{ color: $text; line-height: 1.25; margin-top: 0.25rem;}
+
+.content code{ background: $background; border: 1px solid $border; border-radius: 2px; color: $link; font-size: 0.8em; padding: 2px 4px; vertical-align: baseline;}
+.content aside{ color: $text-light; font-size: 0.8rem;}
+.content blockquote{ background: $background; border-left: 0.25rem solid $link; color: $text-medium; font-size: 1.2rem; padding: 1.5rem;}
+.content h3{ color: $text-darker; font-size: 1.4rem; font-weight: bold; margin: 2rem 0 1rem; padding-left: 0.75em; position: relative;}
+.content h3 a{ left: 0; position: absolute; text-decoration: none;}
+  .content h3{ padding-left: 0;}
+  .content h3 a{ left: auto; margin-right: 0.25em; right: 100%;}
+.content p{ margin: 1rem 0;}
+  .content p:first-child{ margin-top: 0;}
+  .content p:last-child{ margin-bottom: 0;}
+.content ul{ list-style: disc outside; margin: 1rem;}
+  .content ul:last-child{ margin-bottom: 0;}
+.content ul ul{ list-style-type: circle; margin: 0 2rem;}
+
+.browser{ background: white; border: 1px solid $border; border-radius: 5px; box-shadow: 0 0.5rem 1rem rgba(black, 0.1); margin: 1rem 0; min-height: 240px; overflow: hidden;}
+.browser-bar{ background: $background; height: 1.5rem; padding: 0.5rem 1rem 0.5rem 4rem; position: relative;}
+.browser-bar div,
+.browser-bar div:before,
+.browser-bar div:after{ background: $border; border-radius: 50%; height: 0.5rem; left: 0.5rem; position: absolute; top: 0.5rem; width: 0.5rem;}
+.browser-bar div:before{ content: ''; display: block; left: 0.75rem; top: 0;}
+.browser-bar div:after{ content: ''; display: block; left: 1.5rem; top: 0;}
+.browser-body{ border-top: 1px solid $border; position: relative;}
+
+.block{ background: $alpha; color: $alpha-text; font-size: 14px; line-height: 1.25; padding: 0.5em; transition: all 250ms;}
+.block-beta{ background: $beta; color: $beta-text;}
+.block-gamma{ background: $gamma; color: $gamma-text;}
+.block-delta{ background: $delta; color: $delta-text;}
+.block-epsilon{ background: $epsilon; color: $epsilon-text;}
+
+.block .block{ margin: 6px 5px 4px;}
