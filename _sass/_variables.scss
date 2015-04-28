@@ -7,9 +7,8 @@ $text-dark:       hsb($hue, 14, 29);
 $text-medium:     hsb($hue, 14, 53);
 $text-light:      hsb($hue, 14, 71);
 
-$background:      hsb($hue, 2, 98);
+$background:      hsb($hue, 2, 96);
 $border:          hsb($hue, 4, 86);
-$border-light:    hsb($hue, 4, 96);
 
 $blue:            hsb($hue, 71, 96);
 $blue-light:      hsb($hue, 61, 96);
@@ -40,12 +39,13 @@ $eggplant: #674164;
 $html-from:     $text-darker;
 $html-to:       $text-medium;
 
-$link:          $blue;
-$link-visited:  $text-light;
-
-$title:         $text-dark;
+$title:         $text-darker;
 $text:          $text-dark;
 $subtitle:      $text-light;
+
+$link:          $blue;
+$link-hover:    $text;
+$link-visited:  hsb(294, 48, 71);
 
 $background-body: $background;
 $background-main: white;

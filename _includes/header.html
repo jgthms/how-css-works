@@ -1,11 +1,17 @@
+{% assign current_url = page.url %}
 <header class="site-header">
   <a class="site-title" href="{{ site.baseurl }}/">
     {{ site.title }}
   </a>
   <nav class="site-nav">
+    <a href="{{ site.baseurl }}/" {% if current_url == '/index.html' %}class="active"{% endif %}>
+      Home
+    </a>
     {% for page in site.pages %}
       {% if page.title %}
-        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        <a href="{{ page.url | prepend: site.baseurl }}" {% if current_url == page.url %}class="active"{% endif %}>
+          {{ page.title }}
+        </a>
       {% endif %}
     {% endfor %}
   </nav>

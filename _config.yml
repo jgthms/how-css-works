@@ -9,3 +9,29 @@ permalink: /:title.html
 
 # Build settings
 markdown: kramdown
+
+resources:
+  - title: CSS Zen Garden
+    subtitle: The <strong>original</strong> inspiration
+    url: http://csszengarden.com
+    domain: csszengarden.com
+  - title: CSS Vocabulary
+    subtitle: Interactive guide to the CSS <strong>jargon</strong>
+    url: http://apps.workflower.fi/vocabs/css/en
+    domain: workflower.io
+  - title: Can I use...
+    subtitle: Check how well CSS3 features are <strong>supported</strong>
+    url: http://caniuse.com
+    domain: caniuse.com
+  - title: Bounce.js
+    subtitle: Generate CSS3 <strong>animations</strong> with taste
+    url: http://bouncejs.com
+    domain: bouncejs.com
+  - title: cubic-bezier
+    subtitle: Visually build <strong>custom</strong> animation <strong>timing</strong> functions
+    url: http://cubic-bezier.com
+    domain: cubic-bezier.com
+  - title: flexbox in 5 minutes
+    subtitle: Interactive tour of the new <strong>flexbox</strong> property
+    url: http://flexboxin5.com
+    domain: flexboxin5.com

@@ -50,7 +50,7 @@
 
   &:hover,
   &:focus {
-    background: $color-dark;
+    background-color: $color-dark;
     border-color: hsb($h, hsb-saturate($s, 40), $b - 40);
     box-shadow: $inset-top,
                 $inset-bottom,
@@ -58,7 +58,7 @@
   }
 
   &:active {
-    background: $color-dark;
+    background-color: $color-dark;
     box-shadow: inset 0 2px 3px rgba(black, 0.2);
   }
 
